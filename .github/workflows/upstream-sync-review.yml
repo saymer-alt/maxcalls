@@ -18,14 +18,6 @@ jobs:
     if: github.repository == 'saymer-alt/maxcalls'
     runs-on: ubuntu-24.04
     timeout-minutes: 30
-    # workflows:write is valid ONLY at job level; it is required because a
-    # release/branch diff that touches .github/workflows/* cannot be pushed to
-    # a sync/* branch without it. The bot pushes ONLY sync/* branches; the
-    # default branch is ruleset-protected and merged by a human.
-    permissions:
-      contents: write
-      workflows: write
-      pull-requests: write
     steps:
       - name: Checkout fork default branch
         # actions/checkout v4.2.2, pinned by commit SHA (supply-chain hardening).
